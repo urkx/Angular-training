@@ -1,3 +1,4 @@
+import { ReturnStatement } from '@angular/compiler';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GifsService } from '../services/gifs.service';
 
@@ -19,9 +20,12 @@ export class BusquedaComponent implements OnInit {
   buscar(){
     const valor = this.txtBuscar.nativeElement.value;
 
+    if(valor.trim().length === 0)
+    {
+      return;
+    }
+
     this.gifsService.buscarGifs(valor);
-
-
 
     this.txtBuscar.nativeElement.value = '';
   }
