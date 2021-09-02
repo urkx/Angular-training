@@ -1,1 +1,12 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, perspiciatis quasi necessitatibus vero aspernatur iusto quos, sed laboriosam molestiae est ipsa accusantium laudantium culpa hic, impedit vel alias aliquid commodi.
+<div class="row">
+    <div class="col-md4 col-sm-6" *ngFor="let resultado of resultados">
+        <div class="card">
+            <img class="card-img-top" [src]="resultado.images.downsized_medium.url" [alt]="resultado.title">
+            <div class="card-body">
+                <p class="card-text">
+                    {{resultado.title}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
