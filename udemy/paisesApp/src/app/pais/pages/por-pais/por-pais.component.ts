@@ -20,7 +20,7 @@ export class PorPaisComponent implements OnInit {
   }
 
   buscar(termino: string){
-    
+
     this.hayError = false;
     this.termino = termino;
     console.log(this.termino);
@@ -37,6 +37,11 @@ export class PorPaisComponent implements OnInit {
         this.paises = [];
       });
 
+  }
+
+  sugerencias(termino: string){
+    this.hayError=false;
+    //TODO: create suggestions
   }
 
 }
