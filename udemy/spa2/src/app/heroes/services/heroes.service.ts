@@ -14,4 +14,8 @@ export class HeroesService {
     return this.http.get<Heroe[]>('http://localhost:3000/heroes');
 
   }
+
+  getHeroePorId(id: string){
+    return this.http.get<Heroe>(`http://localhost:3000/heroes/${id}`);
+  }
 }
