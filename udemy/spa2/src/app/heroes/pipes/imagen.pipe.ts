@@ -3,7 +3,7 @@ import { Heroe } from '../interfaces/heroes.interface';
 
 @Pipe({
   name: 'imagen',
-  pure: false
+  //pure: false
 })
 export class ImagenPipe implements PipeTransform {
 
