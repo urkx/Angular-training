@@ -168,13 +168,22 @@
       "characters": "Norrin Radd"
     },
     {
-      "superhero": "Robin",
-      "alter_ego": "",
-      "characters": "",
-      "first_appearance": "",
+      "superhero": "Robin2",
+      "alter_ego": "jeje",
+      "characters": "jeje",
+      "first_appearance": "jeje",
       "publisher": "DC Comics",
       "alt_img": "",
       "id": "rF5Rd-F"
+    },
+    {
+      "superhero": "agorer",
+      "alter_ego": "agorer",
+      "characters": "jj",
+      "first_appearance": "jj",
+      "publisher": "DC Comics",
+      "alt_img": "",
+      "id": "GMLlpEG"
     }
   ]
 }
