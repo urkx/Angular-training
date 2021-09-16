@@ -20,7 +20,10 @@ export class AuthService {
 
   login(){
     return this.http.get<Auth>(`${this.baseUrl}/usuarios/1`)
-    .pipe(tap(res => this._auth = res));
+    .pipe(
+      tap(res => this._auth = res),
+      tap(res => localStorage.setItem('id', res.id))
+    );
   }
 
   logout(){
