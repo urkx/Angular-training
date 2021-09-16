@@ -23,4 +23,8 @@ export class AuthService {
     .pipe(tap(res => this._auth = res));
   }
 
+  logout(){
+    this._auth = undefined;
+  }
+
 }
