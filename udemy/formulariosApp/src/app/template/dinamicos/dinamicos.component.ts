@@ -27,6 +27,8 @@ export class DinamicosComponent implements OnInit {
     ]
   };
 
+  nuevoJuego: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -38,6 +40,16 @@ export class DinamicosComponent implements OnInit {
 
   eliminar(idx: number){
     this.persona.favoritos.splice(idx, 1);
+  }
+
+  agregarJuego(){
+    const juego: Favorito = {
+      id: this.persona.favoritos.length + 1,
+      nombre: this.nuevoJuego
+    };
+
+    this.persona.favoritos.push({...juego});
+    this.nuevoJuego = '';
   }
 
 }

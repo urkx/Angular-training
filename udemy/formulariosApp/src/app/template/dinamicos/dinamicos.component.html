@@ -18,8 +18,8 @@
         <label class="col-sm-3 col-form-label">Agregar</label>
         <div class="col-sm-9">
             <div class="input-group">
-                <input class="form-control" placeholder="Agregar favorito...">
-                <button class="btn btn-outline-primary" type="button">Agregar</button>
+                <input class="form-control" placeholder="Agregar favorito..." [(ngModel)]="nuevoJuego" (keyup.enter)="agregarJuego()" name="nuevoJuego">
+                <button class="btn btn-outline-primary" type="button" (click)="agregarJuego()">Agregar</button>
             </div>
         </div>
     </div>
