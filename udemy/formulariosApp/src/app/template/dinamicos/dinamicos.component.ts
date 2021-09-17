@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Persona{
+  nombre: string;
+  favoritos: Favorito[];
+}
+
+interface Favorito{
+  id: number;
+  nombre: string;
+}
+
 @Component({
   selector: 'app-dinamicos',
   templateUrl: './dinamicos.component.html',
@@ -7,6 +17,15 @@ import { Component, OnInit } from '@angular/core';
   ]
 })
 export class DinamicosComponent implements OnInit {
+
+
+  persona: Persona = {
+    nombre: 'Urko',
+    favoritos: [
+      {id: 1, nombre: 'MGS'},
+      {id: 2, nombre: 'MGS2'}
+    ]
+  };
 
   constructor() { }
 
