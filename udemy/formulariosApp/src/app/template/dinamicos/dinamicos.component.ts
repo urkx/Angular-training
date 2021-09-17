@@ -36,4 +36,8 @@ export class DinamicosComponent implements OnInit {
     console.log('Formulario posteado');
   }
 
+  eliminar(idx: number){
+    this.persona.favoritos.splice(idx, 1);
+  }
+
 }
