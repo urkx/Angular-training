@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { emailPattern, nombreApellidoPattern, noPuedeSerPericoPalotes } from 'src/app/shared/validators/validaciones';
 
 @Component({
   selector: 'app-registro',
@@ -9,12 +10,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistroComponent implements OnInit {
 
-  nombreApellidoPattern: string = "([a-zA-Z]+) ([a-zA-Z]+)";
-  emailPattern: string = "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
-
   miFormulario: FormGroup = this.fb.group({
-    nombre: ['', [Validators.required, Validators.pattern(this.nombreApellidoPattern)]],
-    email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
+    nombre: ['', [Validators.required, Validators.pattern(nombreApellidoPattern)]],
+    email: ['', [Validators.required, Validators.pattern(emailPattern)]],
+    username: ['', [Validators.required, noPuedeSerPericoPalotes]],
   });
 
   constructor(private fb: FormBuilder) { }
@@ -23,6 +22,7 @@ export class RegistroComponent implements OnInit {
     this.miFormulario.reset({
       nombre: 'Urko López',
       email: 'test@protonmail.com',
+      username: 'ChemaElCrema',
     });
   }
 

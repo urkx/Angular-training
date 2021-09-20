@@ -23,7 +23,8 @@
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Username</label>
                 <div class="col-sm-9">
-                    <input type="text" class="form-control" placeholder="Username">
+                    <input type="text" class="form-control" placeholder="Username" formControlName="username">
+                    <span class="form-text text-danger" *ngIf="campoNoValido('username')">El username no puede ser PericoPalotes</span>
                 </div>
             </div>
 
@@ -58,3 +59,6 @@
 
 <h2>Email</h2>
 <pre>{{miFormulario.controls.email.errors | json}}</pre>
+
+<h2>Username</h2>
+<pre>{{miFormulario.controls.username.errors | json}}</pre>
