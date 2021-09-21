@@ -56,17 +56,5 @@ export class RegistroComponent implements OnInit {
     this.miFormulario.markAllAsTouched();
   }
 
-  emailRequired(){
-    return this.miFormulario.get('email')?.errors?.required && this.miFormulario.get('email')?.touched;
-  }
-
-  emailFormat(){
-    return this.miFormulario.get('email')?.errors?.pattern && this.miFormulario.get('email')?.touched;
-  }
-
-  emailUsed(){
-    return this.miFormulario.get('email')?.errors?.usedEmail && this.miFormulario.get('email')?.touched;
-  }
-
 
 }
