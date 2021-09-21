@@ -21,14 +21,31 @@ export class RegistroComponent implements OnInit {
     validators: [this.vs.camposIguales('password', 'password2')]
   });
 
+  //emailErrorMsg: string = '';
+
   constructor(private fb: FormBuilder, private vs: ValidatorService, private evs: EmailValidatorService) { }
 
   ngOnInit(): void {
     this.miFormulario.reset({
-      nombre: 'Urko López',
+      nombre: 'Urko Lopez',
       email: 'test@protonmail.com',
       username: 'ChemaElCrema',
+      password: '123456',
+      password2: '123456',
     });
+  }
+
+  get emailErrorMsg(): string{
+    const errors = this.miFormulario.get('email')?.errors;
+    if(errors?.required){
+      return 'El email es obligatorio';
+    } else if(errors?.pattern){
+      return 'El email no tiene un formato válido';
+    } else if(errors?.usedEmail){
+      return 'El email ya está en uso';
+    }
+    
+    return '';
   }
 
   campoNoValido(campo: string){
@@ -38,5 +55,18 @@ export class RegistroComponent implements OnInit {
   submitFormulario(){
     this.miFormulario.markAllAsTouched();
   }
+
+  emailRequired(){
+    return this.miFormulario.get('email')?.errors?.required && this.miFormulario.get('email')?.touched;
+  }
+
+  emailFormat(){
+    return this.miFormulario.get('email')?.errors?.pattern && this.miFormulario.get('email')?.touched;
+  }
+
+  emailUsed(){
+    return this.miFormulario.get('email')?.errors?.usedEmail && this.miFormulario.get('email')?.touched;
+  }
+
 
 }
