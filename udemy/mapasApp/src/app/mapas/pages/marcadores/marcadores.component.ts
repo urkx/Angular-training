@@ -12,15 +12,15 @@ import { element } from 'protractor';
        width: 100%;
      }
 
-     .row{
-       background-color: white;
+     .list-group{
        position: fixed;
-       bottom: 50px;
-       left: 50px;
-       padding: 10px;
-       border-radius: 5px;
-       z-index: 999999;
-       width: 400px;
+       top: 20px;
+       right: 20px;
+       z-index: 99;
+     }
+
+     li{
+       cursor: pointer;
      }
    `
   ]
@@ -43,14 +43,32 @@ export class MarcadoresComponent implements AfterViewInit {
     zoom: this.zoomLevel
     });
 
-    const markerHtml: HTMLElement = document.createElement('div');
+    /* const markerHtml: HTMLElement = document.createElement('div');
     markerHtml.innerHTML = 'Hola Mundo';
 
     new mapboxgl.Marker(
-      //{element: markerHtml}
+      {element: markerHtml}
       )
       .setLngLat(this.center)
-      .addTo(this.mapa);
+      .addTo(this.mapa); */
+    
+  }
+
+  agregarMarcador(){
+
+    const color = "#xxxxxx".replace(/x/g, y => (Math.random()*16|0).toString(16));
+
+    const nuevoMarcador = new mapboxgl.Marker({
+      draggable: true,
+      color: color
+    })
+    .setLngLat(this.center)
+    .addTo(this.mapa);
+
+  }
+
+  irMarcador(){
+
   }
 
 }
